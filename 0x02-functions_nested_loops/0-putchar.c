@@ -3,7 +3,7 @@
 #include <time.h>
 /**
  * main - This is an Entry point
- * Description : "TASK1 The last digit"
+ * Description : "TASK0 print _putchar"
  * @void : The function takes no parameters
  * Return: 0 (Success)
 */
