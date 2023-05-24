@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 /**
  * main - This is an Entry point
  * Description : "TASK0 print _putchar"
