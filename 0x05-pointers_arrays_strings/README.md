@@ -1,0 +1,1 @@
+This is Project is About 0x05. C - Pointers, arrays and strings
