@@ -1,27 +1,24 @@
 #include "variadic_functions.h"
 
 /**
- * sum_them_all - entry point
- * @n: size of triangle
- * Description: --
- * Return: --
+ * sum_them_all - int function
+ * @n: const unsigned int
+ *
+ * Return: 0 or sum.
  */
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list args;
-	int sum = 0, i = 0;
-
-	va_start(args, n);
+	unsigned int sum = 0, i;
 
 	if (n == 0)
-		return (0);
-
-	while (i < (int)n)
 	{
-		sum += va_arg(args, int);
-		i++;
+		return (0);
 	}
-	va_end(args);
-
+	va_start(args, n);
+	for (i = 0; i < n; i++)
+	{
+		sum += va_arg(args, unsigned int);
+	}
 	return (sum);
 }

@@ -1,26 +1,38 @@
 #include "variadic_functions.h"
-#include <stdio.h>
+
 /**
- * print_strings - entry point
- * @separator: size of triangle
- * @n: size of triangle
- * Description: --
- * Return: --
+ * print_strings - void function
+ * @separator: const str
+ * @n: const unsigned int
+ *
+ * Return: nothing.
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list args;
-	int i = 0;
-	char *s;
+	unsigned int i;
+	char *value;
 
 	va_start(args, n);
-	for (i = 0; i < (int)n; i++)
+	if (separator != NULL)
 	{
-		s = va_arg(args, char *);
-		printf("%s%s",
-			   s == NULL ? "(nil)" : s,
-			   i != (int)n - 1 && separator != NULL ? separator : "");
+		for (i = 0; i < n; i++)
+		{
+			value = va_arg(args, char*);
+			if (value == NULL)
+			{
+				printf("(nil)");
+			}
+			else
+			{
+				printf("%s", value);
+			}
+			if (i != n - 1)
+			{
+				printf("%s", separator);
+			}
+		}
+		printf("\n");
+		va_end(args);
 	}
-	va_end(args);
-	printf("\n");
 }
